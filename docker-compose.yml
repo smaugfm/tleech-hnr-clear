@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  tleech-hnr-clear:
+    pull_policy: build
+    build:
+      context: .
+      args:
+        - tleech_user=$TLEECH_USER
+        - tleech_password=$TLEECH_PASSWORD

@@ -23,4 +23,6 @@ RUN touch /var/log/cron.log
 # Run the command on container startup
 RUN echo "TLEECH_USER=${tleech_user}" >> /etc/environment
 RUN echo "TLEECH_PASSWORD=${tleech_password}" >> /etc/environment
+ENV TLEECH_USER=${tleech_user}
+ENV TLEECH_PASSWORD=${tleech_password}
 CMD java -jar /tleech-hnr-clear.jar && cron && tail -f /var/log/cron.log
